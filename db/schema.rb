@@ -10,10 +10,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_18_161034) do
+ActiveRecord::Schema.define(version: 2019_02_18_163144) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "experiences", force: :cascade do |t|
+    t.string "name"
+    t.integer "price"
+    t.integer "participants_number_max"
+    t.string "photo"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_experiences_on_user_id"
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.integer "participants_number"
+    t.integer "total_price"
+    t.string "review"
+    t.integer "rating"
+    t.date "start_at"
+    t.date "end_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.bigint "experience_id"
+    t.index ["experience_id"], name: "index_reservations_on_experience_id"
+    t.index ["user_id"], name: "index_reservations_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +56,14 @@ ActiveRecord::Schema.define(version: 2019_02_18_161034) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "avatar"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "experiences", "users"
+  add_foreign_key "reservations", "experiences"
+  add_foreign_key "reservations", "users"
 end
