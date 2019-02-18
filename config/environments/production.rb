@@ -63,7 +63,7 @@ Rails.application.configure do
 
   # Use a real queuing backend for Active Job (and separate queues per environment)
   # config.active_job.queue_adapter     = :resque
-  # config.active_job.queue_name_prefix = "CHANGE_THIS_TO_YOUR_RAILS_APP_NAME_#{Rails.env}"
+  # config.active_job.queue_name_prefix = "rails-airbnb-clone_#{Rails.env}"
 
   config.action_mailer.perform_caching = false
 

@@ -1,5 +1,5 @@
 {
-  "name": "CHANGE_THIS_TO_YOUR_RAILS_APP_NAME",
+  "name": "rails-airbnb-clone",
   "private": true,
   "dependencies": {
     "@rails/webpacker": "3.5",
