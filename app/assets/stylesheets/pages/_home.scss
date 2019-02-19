@@ -1,1 +1,89 @@
-// Specific CSS for your home-page
+.header{
+  height: 70vh;
+  background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5)), url("background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 10% 10% 0% 10%;
+  h1{
+    margin: 0;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 1.5em;
+  }
+  p{
+    color:white;
+    font-size: 18px;
+  }
+}
+
+.header-inner{
+  padding-left:5%;
+  border-left: dotted white 2px;
+  height: 60%;
+}
+
+.form-container{
+  position: relative;
+  height: 120px;
+  top: -60px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin: auto;
+  z-index:1;
+  form {
+    margin: 0;
+  }
+  img{
+    width: 60px;
+    height: 60px;
+    margin-left: 2em;
+    margin-right:2em;
+  }
+
+  .search-button {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    margin-right: 2em;
+  }
+
+  .form-group{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    input {
+    border-right: none;
+    border-radius: 0;
+    }
+  }
+  .item {
+    flex-grow: 2;
+  }
+}
+
+.utilities{
+  background-color:$dark-green;
+  color: white;
+  padding-bottom:60px;
+  img{
+  height:80px;
+  }
+  p {
+    font-size:12px;
+  }
+  .utilitie-praragraph{
+    padding: 0em 1em;
+  }
+  .utilitie-container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+
