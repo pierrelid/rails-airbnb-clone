@@ -8,7 +8,8 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     @review.reservation = @review
-    if review.save
+    @reservation.user = current_user
+    if @review.save
       redirect_to reservation_path(params[:reservation_id])
     else
       render new
@@ -25,3 +26,4 @@ class ReviewsController < ApplicationController
     params.require(:review).permit(:reservation_id, :comment)
   end
 end
+

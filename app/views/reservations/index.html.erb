@@ -1,0 +1,16 @@
+
+<ul>
+<% @reservations.each do |reservation| %>
+
+  <li>
+
+Nombre de participants: <%= reservation.participants_number %>
+Date de début:<%= reservation.start_at %>
+Date de fin <%= reservation.end_date %>
+  </li>
+
+
+
+<% end %>
+
+</ul>

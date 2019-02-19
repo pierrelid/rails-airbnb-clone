@@ -1,0 +1,29 @@
+.btn-green{
+  color: white;
+  background-color: $green;
+  border:none;
+  font-weight: bold;
+  border: solid $green 1px;
+  transition: all 0.3s;
+}
+
+.btn-green:hover{
+  color: white;
+  background-color:$dark-green;
+  border: solid $dark-green 1px;
+
+}
+
+.btn-white{
+  color: $green;
+  background-color: white;
+  border: solid 1px $green;
+  font-weight: bold;
+  transition: all 0.3s;
+  border-radius: 5px;
+}
+
+.btn-white:hover{
+  color: $dark-green;
+  border: solid 1px $dark-green;
+}

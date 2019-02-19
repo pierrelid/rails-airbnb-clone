@@ -9,7 +9,7 @@ gem 'rails', '5.2.2'
 gem 'redis'
 
 gem 'autoprefixer-rails'
-gem 'bootstrap-sass', '~> 3.3'
+gem 'bootstrap', '~> 4.3.1'
 gem 'font-awesome-sass', '~> 5.5.0'
 gem 'sassc-rails'
 gem 'simple_form'
@@ -17,8 +17,6 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'devise'
 gem 'faker'
-
-
 
 group :development do
   gem 'web-console', '>= 3.3.0'

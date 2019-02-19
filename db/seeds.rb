@@ -31,6 +31,7 @@ user = User.create!(
     participants_number_max: 10,
     photo: "https://picsum.photos/200/300",
     description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur nesciunt tempore ex esse harum. Numquam ipsum alias, reiciendis hic, culpa sit, assumenda provident optio labore quia fugiat vitae dicta nostrum?",
+
     user: user
   )
 }

@@ -1,0 +1,8 @@
+<div class="container">
+  <%= simple_form_for [@experience, @reservation] do |f| %>
+    <%= f.input :participants_number  %>
+    <%= f.input :start_at %>
+    <%= f.input :end_date %>
+    <%= f.button :submit %>
+  <% end %>
+</div>
