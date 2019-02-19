@@ -17,7 +17,7 @@ Categorie.create(name: "SKI")
 Categorie.create(name: "PONEY")
 Categorie.create(name: "NATATION")
 
-User.create(
+@user = User.create(
   first_name: 'julien',
   last_name: 'lu',
   email: 'julien@gmail.com',
@@ -28,6 +28,7 @@ User.create(
 10.times {
   Experience.create(
     name: "",
+    user_id: 1,
     price: 10,
     participants_number_max: 10,
     photo: "https://picsum.photos/200/300",
