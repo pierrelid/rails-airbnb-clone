@@ -1,5 +1,5 @@
 class ReservationsController < ApplicationController
-  before_action :set_experience
+  before_action :set_experience, only: [:new, :create]
   def index
     @reservations = Reservation.all
   end
@@ -9,7 +9,7 @@ class ReservationsController < ApplicationController
   end
 
   def show
-    @reservations = Reservation.new(params[:id])
+    @reservation = Reservation.new(params[:id])
   end
 
   def create
