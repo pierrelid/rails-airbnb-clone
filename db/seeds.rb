@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-#require 'faker'
+require 'faker'
 
 
 User.destroy_all
@@ -27,7 +27,7 @@ User.create(
 
 10.times {
   Experience.create(
-    name: "",
+    name: Faker::Address.city,
     price: 10,
     participants_number_max: 10,
     photo: "https://picsum.photos/200/300",
