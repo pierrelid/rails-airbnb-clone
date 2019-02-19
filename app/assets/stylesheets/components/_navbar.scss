@@ -20,7 +20,10 @@
 .navbar-lewagon .navbar-lewagon-actions {
   display: flex;
   align-items: center;
-}
+
+.navbar-wagon-brand:hover{
+    color:$dark-green;
+  }
 
 .navbar-lewagon .navbar-lewagon-actions .navbar-lewagon-link {
   margin-left: 24px;
