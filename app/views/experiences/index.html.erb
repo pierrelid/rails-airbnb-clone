@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <% @experiences.each do |experience| %>
+    <div class="col-xs-6 col-sm-4">
+      <%= link_to experience_path(experience) do %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= experience.photo %>)">
+        <%= experience.name %>
+        </div>
+        <div class="card-info">
+          <p><%= experience.price %> €</p>
+          <p><i class="fas fa-user-friends"></i> <%= experience.participants_number_max %></p>
+        </div>
+      <% end %>
+    </div>
+    <% end %>
+
+  </div>
+</div>
