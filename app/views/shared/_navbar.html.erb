@@ -1,86 +1,63 @@
-<div class="navbar-wagon">
-    <!-- Name -->
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
-  CammelBack
+
+<div class="navbar-lewagon">
+  <%= link_to root_path do %>
+  <h1>CamelBack</h1>
   <% end %>
 
-  <!-- Right Navigation -->
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
+  <!-- displayed on laptops -->
+  <div class="navbar-lewagon-actions d-none d-sm-flex">
 
     <% if user_signed_in? %>
 
-    <!-- Links when logged in -->
     <%= link_to "My experiences", "#", class: "navbar-wagon-item navbar-wagon-link" %>
 
-    <!-- Avatar with dropdown menu -->
-    <div class="navbar-wagon-item">
-      <div class="dropdown">
-      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li>
-            <%= link_to "#" do %>
-            <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
-            <% end %>
-          </li>
-          <li>
-            <%= link_to "#" do %>
-            <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
-            <% end %>
-          </li>
-          <li>
-            <%= link_to destroy_user_session_path, method: :delete do %>
-            <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-            <% end %>
-          </li>
-        </ul>
-      </div>
-    </div>
+    <div class="dropdown">
+      <i class="fas fa-bars" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#"><i class="fas fa-user"></i> Account</a>
+          <a class="dropdown-item" href="#"><i class="fas fa-cogs"></i> Settings</a>
+          <%= link_to destroy_user_session_path, method: :delete do %>
+            <p class="dropdown-item"><i class="fas fa-sign-out-alt"></i> Log out</p>
+          <% end %>
+        </div>
+     </div>
+
     <% else %>
 
-    <!-- Signup link (when logged out) -->
     <%= link_to t(".sign_up", default: "Signup"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
-    <!-- Login link (when logged out) -->
     <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
   </div>
 
-  <!-- Dropdown list appearing on mobile only -->
-  <div class="navbar-wagon-item hidden-md hidden-lg">
+  <!-- displayed on phone / tablet -->
+  <div class="navbar-lewagon-actions d-block d-sm-none">
     <% if user_signed_in? %>
       <div class="dropdown">
-        <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li>
-            <%= link_to "My experiences", "#"%>
-          </li>
-          <li>
-              <%= link_to "Profile", "#" %>
-          </li>
-            <li>
-              <%= link_to "#" do %>
-              <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to destroy_user_session_path, method: :delete do %>
-              <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-              <% end %>
-            </li>
-        </ul>
+        <i class="fas fa-bars" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+          <%= link_to "My experiences", "#", class: "dropdown-item" %>
+          <a class="dropdown-item" href="#"><i class="fas fa-user"></i> Account</a>
+          <a class="dropdown-item" href="#"><i class="fas fa-cogs"></i> Settings</a>
+          <%= link_to destroy_user_session_path, method: :delete do %>
+            <p class="dropdown-item"><i class="fas fa-sign-out-alt"></i> Log out</p>
+          <% end %>
+        </div>
       </div>
     <% else %>
       <div class="dropdown">
-        <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li>
-            <%= link_to t(".sign_up", default: "Signup"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
-          </li>
-          <li>
-            <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-          </li>
-        </ul>
+        <i class="fas fa-bars" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+          <%= link_to new_user_registration_path do %>
+            <p class="dropdown-item">Sign up</p>
+          <% end %>
+          <%= link_to new_user_session_path do %>
+            <p class="dropdown-item">Log in</p>
+          <% end %>
+        </div>
       </div>
     <% end %>
   </div>
 </div>
+
+
