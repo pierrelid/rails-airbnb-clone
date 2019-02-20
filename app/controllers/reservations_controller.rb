@@ -13,8 +13,7 @@ class ReservationsController < ApplicationController
   end
 
   def create
-    @reservation = Reservation.new(reservation_params)
-    @reservation.experience = Experience.find(params[:experience_id])
+    @reservation = @experience.reservations.new(reservation_params)
     @reservation.user = current_user
     if @reservation.save
       redirect_to reservations_path
