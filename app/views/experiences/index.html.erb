@@ -17,7 +17,7 @@
       <% @experiences.each do |experience| %>
         <%= link_to experience_path(experience.id) do %>
         <div class="card-trip">
-          <img src="<%= image_path experience.photo %>")">
+          <img src="<%= image_path experience.photo %>">
           <div class="card-trip-infos">
             <div>
               <h2><%= experience.name %></h2>
