@@ -3,7 +3,7 @@
 <% @reservations.each do |reservation| %>
 
   <li>
-
+Nom de l'experience: <%= link_to reservation.experience.name, new_reservation_review_path(reservation) %>
 Nombre de participants: <%= reservation.participants_number %>
 Date de début:<%= reservation.start_at %>
 Date de fin <%= reservation.end_date %>
@@ -14,3 +14,4 @@ Date de fin <%= reservation.end_date %>
 <% end %>
 
 </ul>
+
