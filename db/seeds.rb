@@ -13,17 +13,16 @@ Categorie.destroy_all
 Experience.destroy_all
 Reservation.destroy_all
 
-Categorie.create(name: "SKI")
-Categorie.create(name: "PONEY")
-Categorie.create(name: "NATATION")
+Categorie.create!(name: "SKI")
+Categorie.create!(name: "PONEY")
+Categorie.create!(name: "NATATION")
 
-User.create(
+user = User.create!(
   first_name: 'julien',
   last_name: 'lu',
   email: 'julien@gmail.com',
   password: 'topsecret',
-  password_confirmation: 'topsecret'
-  )
+)
 
 User.create(
   first_name: 'jean marc',

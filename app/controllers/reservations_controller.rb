@@ -13,14 +13,17 @@ class ReservationsController < ApplicationController
   end
 
   def create
-    @user = current_user
     @reservation = @experience.reservations.new(reservation_params)
-    @reservation.user_id = @user.id
+    @reservation.user = current_user
     if @reservation.save
-      redirect_to experience_path(params[:experience_id])
+      redirect_to reservations_path
     else
       render :new
     end
+  end
+
+  def price_to_pay
+    @total_price = @experience.price * @experience.participants_number
   end
 
   private
