@@ -1,9 +1,14 @@
-<div class="container">
-  <h1>Votre avis est important</h1>
-  <%= simple_form_for @reservation, url: reservation_reviews_path(@reservation), method: :post do |f| %>
-  <%= f.input :review %>
-  <%= f.input :rating %>
-  <%= f.button :submit %>
-  <% end %>
-</div>
 
+
+<div class="wrapper-style" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5)), url('<%= @reservation.experience.photo %>'); background-size: cover; background-position: center;">
+  <div class="container container-style">
+    <div class="form-style">
+     <%= simple_form_for @reservation, url: reservation_reviews_path(@reservation), method: :post do |f| %>
+     <%= f.input :review %>
+     <%= f.input :rating %>
+     <%= f.button :submit , class: 'btn btn-green' %>
+     <% end %>
+   </div>
+ </div>
+
+</div>
