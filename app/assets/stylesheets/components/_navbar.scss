@@ -12,6 +12,12 @@
   }
   a {
     color: $green;
+    &:hover {
+      background: white;
+    }
+    &:active {
+      background: white;
+    }
   }
 }
 
