@@ -7,11 +7,16 @@
   transition: all 0.3s;
 }
 
+.btn-lg{
+padding: 0.5em 1em;
+margin:1em;
+font-size: 20px;
+}
+
 .btn-green:hover{
   color: white;
   background-color:$dark-green;
   border: solid $dark-green 1px;
-
 }
 
 .btn-white{

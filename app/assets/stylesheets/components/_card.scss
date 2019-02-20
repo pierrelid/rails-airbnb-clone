@@ -44,6 +44,12 @@ a:hover {
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin: 10px 0px;
+  h2{
+  color:$gray;
+  }
+  p{
+  color:$gray;
+  }
 }
 
 .card-trip > img {
@@ -83,4 +89,51 @@ a:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+}
+
+.notification {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  background: white;
+  padding: 8px 16px;
+  border: 1px solid rgb(235,235,235);
+  img{
+    width:50px;
+    border-radius: 50%;
+  }
+}
+
+.notification .notification-content {
+  flex-grow: 1;
+  padding: 1em 2em;
+}
+
+.notification p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.notification small {
+  color: #999999;
+  font-weight: bold;
+}
+.notification .notification-actions {
+  opacity: 0;
+  display: flex;
+  transition: ease .3s;
+}
+
+.notification:hover .notification-actions {
+  opacity: 1;
+}
+
+.notification .notification-actions a {
+  color: #999999;
+  margin-left: 16px;
+  font-size: 14px;
+}
+
+.notification .notification-actions a:hover {
+  color: #555555;
 }

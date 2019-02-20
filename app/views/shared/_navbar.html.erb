@@ -9,7 +9,7 @@
 
     <% if user_signed_in? %>
 
-    <%= link_to "My experiences", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "My experiences", reservations_path, class: "dropdown-item" %>
 
     <div class="dropdown">
       <i class="fas fa-bars" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
@@ -35,8 +35,9 @@
     <% if user_signed_in? %>
       <div class="dropdown">
         <i class="fas fa-bars" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+        <%= link_to "My experiences", reservations_path, class: "dropdown-item" %>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-          <%= link_to "My experiences", "#", class: "dropdown-item" %>
+          <%= link_to "My experiences", reservations_path, class: "dropdown-item" %>
           <a class="dropdown-item" href="#"><i class="fas fa-user"></i> Account</a>
           <a class="dropdown-item" href="#"><i class="fas fa-cogs"></i> Settings</a>
           <%= link_to destroy_user_session_path, method: :delete do %>

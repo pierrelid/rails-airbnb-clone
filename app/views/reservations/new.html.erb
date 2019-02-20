@@ -1,4 +1,4 @@
-<div class="wrapper-style" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5)), url('');">
+<div class="wrapper-style" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5)), url('<%= @experience.photo %>'); background-size: cover; background-position: center;">
   <div class="container container-style">
     <div class="form-style">
       <%= simple_form_for [@experience, @reservation] do |f| %>

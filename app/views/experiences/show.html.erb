@@ -1,9 +1,61 @@
-<h1>Experience</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5)), url('<%= @experience.photo %>'); background-size: cover; background-position: center;">
+  <div class="container">
+    <h1>Rejoignez : <%= @experience.name %></h1>
+    <%= link_to 'Faire une reservation', new_experience_reservation_path(@experience), class: 'btn btn-green btn-lg'  %>
+  </div>
+</div>
 
 
-<ul>
-  <li><%= @experience.name %> - <%= @experience.price %> - <%= @experience.description %></li>
-</ul>
+<div class="container experience-descrption">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="intro" style='border-left:none; padding-bottom: 0;'>
+        <h1>Check out our experiences</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores beatae debitis laudantium aliquam reiciendis optio ab, est quod praesentium cumque assumenda, perferendis nostrum possimus ullam non dignissimos. Ipsum, dignissimos, illum.</p>
+      </div>
+    </div>
+    <div class="col-sm-6" style="padding-left:0; padding-bottom: 0;">
+      <div class="intro">
+        <h1>Check out our experiences</h1>
+        <ul>
+          <li>Nombre max de participants : <strong><%= @experience.participants_number_max %></strong></li>
+          <li>Prix : <strong><%= @experience.price %> €</strong></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 
-<%= link_to 'Book', new_experience_reservation_path(@experience)  %>
+<div class="globe">
+  <%= image_tag 'globe.png' %>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="intro reviews" style='border-left:none; padding-bottom: 0;'>
+        <h4>Check out our reviews</h4>
+        <div class="border-dotted"></div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <% @reservations.each do |reservation|%>
+          <div class="col-sm-4">
+            <div class="notification">
+              <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large"/>
+              <div class="notification-content">
+                <% reservation.rating.to_i.times do %>
+                <span>⭐</span>
+                <% end %>
+                <p><small><%= reservation.review %></small></p>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
