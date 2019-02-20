@@ -13,7 +13,9 @@ class ReservationsController < ApplicationController
   end
 
   def create
+    @user = current_user
     @reservation = @experience.reservations.new(reservation_params)
+    @reservation.user_id = @user.id
     if @reservation.save
       redirect_to experience_path(params[:experience_id])
     else
@@ -24,7 +26,7 @@ class ReservationsController < ApplicationController
   private
 
   def reservation_params
-    params.require(:reservation).permit(:experience_id, :participants_number, :start_at, :end_at)
+    params.require(:reservation).permit(:experience_id, :participants_number, :start_at, :end_date)
   end
 
   def set_experience
