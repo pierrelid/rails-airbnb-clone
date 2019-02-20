@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>Votre avis est important</h1>
+  <%= simple_form_for @reservation, url: reservation_reviews_path(@reservation), method: :post do |f| %>
+  <%= f.input :review %>
+  <%= f.input :rating %>
+  <%= f.button :submit %>
+  <% end %>
+</div>
+
