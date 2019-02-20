@@ -1,7 +1,8 @@
 class ReservationsController < ApplicationController
   before_action :set_experience, only: [:new, :create]
+
   def index
-    @reservations = Reservation.all
+    @reservations = current_user.reservations
   end
 
   def new
@@ -33,6 +34,9 @@ class ReservationsController < ApplicationController
   end
 
   def set_experience
-    @experience = Experience.find(params[:experience_id])
+    @experience = Experience.find(params[:experience_id, :user_id])
   end
 end
+
+
+

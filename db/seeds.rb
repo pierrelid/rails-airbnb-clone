@@ -60,7 +60,14 @@ end
     name: ["Sport", "OutDoor", "Activité"].sample,
     price: [10,25,30,5,3,60].sample,
     participants_number_max: [1,2,3,4,5,6,7,8,9,10].sample,
-    photo: ["experience1.jpg", "experience2.jpg", "experience3.jpg", "experience4.jpg", "experience5.jpg", "experience7.jpg", "experience8.jpg", "experience9.jpg", "experience10.jpg"].sample,
+    photo: ["https://res.cloudinary.com/drcebzqwz/image/upload/v1550664730/clone%20air%20bnb/experience7.jpg",
+      "https://res.cloudinary.com/drcebzqwz/image/upload/v1550664729/clone%20air%20bnb/experience4.jpg",
+      "https://res.cloudinary.com/drcebzqwz/image/upload/v1550664728/clone%20air%20bnb/experience8.jpg",
+      "https://res.cloudinary.com/drcebzqwz/image/upload/v1550664725/clone%20air%20bnb/experience10.jpg",
+      "https://res.cloudinary.com/drcebzqwz/image/upload/v1550664723/clone%20air%20bnb/experience2.jpg",
+      "https://res.cloudinary.com/drcebzqwz/image/upload/v1550664723/clone%20air%20bnb/experience1.jpg",
+      "https://res.cloudinary.com/drcebzqwz/image/upload/v1550664722/clone%20air%20bnb/experience5.jpg",
+      "https://res.cloudinary.com/drcebzqwz/image/upload/v1550664721/clone%20air%20bnb/experience3.jpg"].sample,
     description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur nesciunt tempore ex esse harum. Numquam ipsum alias, reiciendis hic, culpa sit, assumenda provident optio labore quia fugiat vitae dicta nostrum?",
     user_id: user_ids.sample,
     address: [" 107 Cours Balguerie Stuttenberg, 33300 Bordeaux", "Place Pey Berland, 33000 Bordeaux", "Esplanade de Pontac, 134 Quai de Bacalan, 33300 Bordeaux", "9 Quai de la Douane, 33000 Bordeaux"].sample )
@@ -78,6 +85,3 @@ end
   p ""
   p ""
 }
-
-
-
