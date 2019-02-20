@@ -57,7 +57,7 @@ end
 
 10.times{
   experience = Experience.create(
-    name: ["Sport", "OutDoor", "Activité"].sample,
+    name: ["Sports", "OutDoors", "Activity"].sample,
     price: [10,25,30,5,3,60].sample,
     participants_number_max: [1,2,3,4,5,6,7,8,9,10].sample,
     photo: ["https://res.cloudinary.com/drcebzqwz/image/upload/v1550664730/clone%20air%20bnb/experience7.jpg",
