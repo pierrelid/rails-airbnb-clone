@@ -1,9 +1,12 @@
-<h2>Sign up</h2>
+<div class="wrapper-style" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5)), url('');">
+  <div class="container container-style">
+    <div class="form-style">
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <h2>Sign up</h2>
     <%= f.input :email,
                 required: true,
                 autofocus: true,
@@ -18,7 +21,7 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+    <%= f.button :submit, class: "btn btn-green" %>
   </div>
 <% end %>
 
