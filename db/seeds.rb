@@ -24,14 +24,60 @@ user = User.create!(
   password: 'topsecret',
 )
 
-10.times {
-  Experience.create!(
-    name: Faker::Address.city,
-    price: 10,
-    participants_number_max: 10,
-    photo: "https://picsum.photos/200/300",
-    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur nesciunt tempore ex esse harum. Numquam ipsum alias, reiciendis hic, culpa sit, assumenda provident optio labore quia fugiat vitae dicta nostrum?",
-
-    user: user
+User.create(
+  first_name: 'jean marc',
+  last_name: 'lu',
+  email: 'jeanmarc@gmail.com',
+  password: 'topsecret',
+  password_confirmation: 'topsecret'
   )
+
+User.create(
+  first_name: 'fanny',
+  last_name: 'lu',
+  email: 'fanny@gmail.com',
+  password: 'topsecret',
+  password_confirmation: 'topsecret'
+  )
+
+User.create(
+  first_name: 'pierre',
+  last_name: 'lu',
+  email: 'pierre@gmail.com',
+  password: 'topsecret',
+  password_confirmation: 'topsecret'
+  )
+
+@users = User.all
+user_ids =[]
+@users.each do |user|
+  user_ids << user.id
+end
+
+
+10.times{
+  experience = Experience.create(
+    name: ["Sport", "OutDoor", "Activité"].sample,
+    price: [10,25,30,5,3,60].sample,
+    participants_number_max: [1,2,3,4,5,6,7,8,9,10].sample,
+    photo: ["experience1.jpg", "experience2.jpg", "experience3.jpg", "experience4.jpg", "experience5.jpg", "experience7.jpg", "experience8.jpg", "experience9.jpg", "experience10.jpg"].sample,
+    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur nesciunt tempore ex esse harum. Numquam ipsum alias, reiciendis hic, culpa sit, assumenda provident optio labore quia fugiat vitae dicta nostrum?",
+    user_id: user_ids.sample,
+    address: [" 107 Cours Balguerie Stuttenberg, 33300 Bordeaux", "Place Pey Berland, 33000 Bordeaux", "Esplanade de Pontac, 134 Quai de Bacalan, 33300 Bordeaux", "9 Quai de la Douane, 33000 Bordeaux"].sample )
+  p "------------------------"
+  p ""
+  p "name : #{experience.name}"
+  p "price : #{experience.price}"
+  p "participants_number_max : #{experience.participants_number_max}"
+  p "photo : #{experience.photo}"
+  p "address : #{experience.address}"
+  p "description : #{experience.description}"
+  p "user_id : #{experience.user_id}"
+  p ""
+  p "------------------------"
+  p ""
+  p ""
 }
+
+
+

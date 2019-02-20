@@ -1,7 +1,11 @@
 class ExperiencesController < ApplicationController
   def index
-    @experiences = Experience.all
-  end
+    if params[:query].present?
+     @experiences = Experience.where(title: params[:query])
+   else
+     @experiences = Experience.all
+   end
+ end
 
   def show
     @experience = Experience.find(params[:id])
