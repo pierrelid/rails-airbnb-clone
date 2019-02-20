@@ -25,12 +25,38 @@ User.create(
   password_confirmation: 'topsecret'
   )
 
-10.times {
-  Experience.create(
-    name: Faker::Address.city,
-    price: 10,
-    participants_number_max: 10,
-    photo: "https://picsum.photos/200/300",
-    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur nesciunt tempore ex esse harum. Numquam ipsum alias, reiciendis hic, culpa sit, assumenda provident optio labore quia fugiat vitae dicta nostrum?",
-    user_id: 1)
-}
+Experience.create(
+  name: 'test',
+  price: 10,
+  participants_number_max: 10,
+  photo: "experience1.jpg",
+  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur nesciunt tempore ex esse harum. Numquam ipsum alias, reiciendis hic, culpa sit, assumenda provident optio labore quia fugiat vitae dicta nostrum?",
+  user_id: 1)
+Experience.create(
+  name: 'test',
+  price: 10,
+  participants_number_max: 10,
+  photo: "experience2.jpg",
+  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur nesciunt tempore ex esse harum. Numquam ipsum alias, reiciendis hic, culpa sit, assumenda provident optio labore quia fugiat vitae dicta nostrum?",
+  user_id: 1)
+Experience.create(
+  name: 'test',
+  price: 10,
+  participants_number_max: 10,
+  photo: "experience3.jpg",
+  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur nesciunt tempore ex esse harum. Numquam ipsum alias, reiciendis hic, culpa sit, assumenda provident optio labore quia fugiat vitae dicta nostrum?",
+  user_id: 1)
+Experience.create(
+  name: 'test',
+  price: 10,
+  participants_number_max: 10,
+  photo: "experience4.jpg",
+  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur nesciunt tempore ex esse harum. Numquam ipsum alias, reiciendis hic, culpa sit, assumenda provident optio labore quia fugiat vitae dicta nostrum?",
+  user_id: 1)
+Experience.create(
+  name: 'test',
+  price: 10,
+  participants_number_max: 10,
+  photo: "experience5.jpg",
+  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur nesciunt tempore ex esse harum. Numquam ipsum alias, reiciendis hic, culpa sit, assumenda provident optio labore quia fugiat vitae dicta nostrum?",
+  user_id: 1)

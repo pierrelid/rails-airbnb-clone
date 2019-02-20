@@ -1,18 +1,37 @@
-<div class="container">
-  <div class="row">
-    <% @experiences.each do |experience| %>
-    <div class="col-xs-6 col-sm-4">
-      <%= link_to experience_path(experience) do %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= experience.photo %>)">
-        <%= experience.name %>
-        </div>
-        <div class="card-info">
-          <p><%= experience.price %> €</p>
-          <p><i class="fas fa-user-friends"></i> <%= experience.participants_number_max %></p>
-        </div>
-      <% end %>
-    </div>
-    <% end %>
-
+<div class="banner" style="">
+  <div class="container">
+    <h1>Le Wagon brings <strong>tech skills</strong> to <strong>creative people</strong>!</h1>
+    <p>Change your life and learn to code at one of our campuses around the world.</p>
   </div>
 </div>
+
+<div class="container">
+
+  <div class="intro">
+    <h1>Toutes les expérences disponibles</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores beatae debitis laudantium aliquam reiciendis optio ab, est quod praesentium cumque assumenda, perferendis nostrum possimus ullam non dignissimos. Ipsum, dignissimos, illum.</p>
+  </div>
+
+  <div class="row">
+    <% @experiences.each do |experience| %>
+         <div class="col-sm-4">
+    <%= link_to experience_path(experience.id) do %>
+      <div class="card-trip">
+        <img src="<%= image_path experience.photo %>")">
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= experience.name %></h2>
+            <p><i class="fas fa-user-friends"></i> <%= experience.participants_number_max %></p>
+          </div>
+          <h2 class="card-trip-pricing"><%= experience.price %>€</h2>
+        </div>
+      </div>
+
+    <% end %>
+        </div>
+   <% end %>
+ </div>
+</div>
+
+
+
