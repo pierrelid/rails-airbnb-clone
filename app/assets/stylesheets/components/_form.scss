@@ -4,15 +4,21 @@
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   padding: 2em;
-  p{
+  p {
     font-size: 22px;
     font-weight:bold;
     color: $gray;
     padding: 0.5em 0em;
   }
-  label{
+  label {
     color: $gray;
     font-weight: bold;
+  }
+  a {
+    color: $gray;
+      &:hover {
+    text-decoration: underline;
+    }
   }
 }
 
@@ -28,3 +34,6 @@
   }
 }
 
+.btn-green {
+  margin-bottom: 10px;
+}
