@@ -66,7 +66,12 @@
     }
   }
   .item {
-    flex-grow: 2;
+    flex-grow: 1.5;
+    padding:0;
+    margin: 0;
+    .search-button{
+      margin-bottom: 0;
+    }
   }
 }
 

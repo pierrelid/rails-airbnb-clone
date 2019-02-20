@@ -1,17 +1,26 @@
-
-<ul>
-<% @reservations.each do |reservation| %>
-
-  <li>
-Nom de l'experience: <%= link_to reservation.experience.name, new_reservation_review_path(reservation) %>
-Nombre de participants: <%= reservation.participants_number %>
-Date de début:<%= reservation.start_at %>
-Date de fin <%= reservation.end_date %>
-  </li>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5)), url('https://res.cloudinary.com/drcebzqwz/image/upload/v1550677297/clone%20air%20bnb/friend2.jpg'); background-size: cover; background-position: center;">
+  <div class="container">
+    <h1>Mes Reservations</h1>
+  </div>
+</div>
 
 
+<div class="container">
+  <div class="row">
+    <% @reservations.each do |reservation| %>
+    <div class="col-sm-6">
+      <div class="card-product">
+        <img src="<%= image_path reservation.experience.photo %>">
+        <div class="card-product-infos">
+          <h2><%= reservation.experience.name %></h2>
+          <%= link_to "Donner un avis", new_reservation_review_path(reservation) %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
 
-<% end %>
 
-</ul>
+
 
