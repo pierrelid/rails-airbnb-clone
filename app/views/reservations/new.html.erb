@@ -1,8 +1,15 @@
-<div class="container">
-  <%= simple_form_for [@experience, @reservation] do |f| %>
-    <%= f.input :participants_number  %>
-    <%= f.input :start_at %>
-    <%= f.input :end_date %>
-    <%= f.button :submit %>
-  <% end %>
+<div class="wrapper-style" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5)), url('');">
+  <div class="container container-style">
+    <div class="form-style">
+      <%= simple_form_for [@experience, @reservation] do |f| %>
+       <p>Réservez votre expérince dès maintentant ! 🙂</p>
+        <%= f.input :participants_number  %>
+        <%= f.input :start_at %>
+        <%= f.input :end_date %>
+        <%= f.button :submit , class: "btn btn-green"%>
+      <% end %>
+    </div>
+  </div>
+
 </div>
+
