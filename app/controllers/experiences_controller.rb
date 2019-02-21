@@ -4,14 +4,15 @@ class ExperiencesController < ApplicationController
    #  if params[:query].present?
    #   @experiences = Experience.where(title: params[:query])
    # else
-     @experiences = Experience.all
+   #   @experiences = Experience.all
    # end
-    # @experiences = Experience.where.not(latitude: nil, longitude: nil)
+    @experiences = Experience.where.not(latitude: nil, longitude: nil)
 
     @markers = @experiences.map do |experience|
       {
         lng: experience.longitude,
-        lat: experience.latitude
+        lat: experience.latitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { experience: experience })
       }
     end
   end
