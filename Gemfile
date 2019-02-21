@@ -18,6 +18,9 @@ gem 'webpacker'
 gem 'devise'
 gem 'faker'
 gem "geocoder"
+gem 'twilio-ruby', '~> 5.20.1'
+gem 'carrierwave', '~> 1.2'
+gem 'cloudinary'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

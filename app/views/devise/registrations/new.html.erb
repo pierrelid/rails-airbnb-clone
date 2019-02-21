@@ -7,10 +7,22 @@
 
       <div class="form-inputs">
         <h2>Sign up</h2>
+        <%= f.input :first_name,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "first name" }%>
+        <%= f.input :last_name,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "last name" }%>
         <%= f.input :email,
                   required: true,
                   autofocus: true,
                   input_html: { autocomplete: "email" }%>
+        <%= f.input :phone,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "phone" }%>
         <%= f.input :password,
                   required: true,
                   hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),

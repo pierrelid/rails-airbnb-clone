@@ -1,0 +1,6 @@
+<div class="popupmap">
+  <h1><%= experience.name %></h1>
+  <p><%= experience.address %></p>
+  <%= link_to 'View', experience_path(experience.id), class: 'btn btn-green btn-sm' %>
+  <%= link_to 'Book', new_experience_reservation_path(experience.id), class: 'btn btn-green btn-sm'  %>
+</div>

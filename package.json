@@ -2,9 +2,11 @@
   "name": "rails-airbnb-clone",
   "private": true,
   "dependencies": {
+    "@mapbox/mapbox-gl-geocoder": "^3.1.2",
     "@rails/webpacker": "3.5",
     "boostrap": "^2.0.0",
     "bootstrap": "^4.3.1",
+    "flatpickr": "^4.5.2",
     "jquery": "^3.3.1",
     "mapbox-gl": "^0.53.0",
     "popper.js": "^1.14.7"
