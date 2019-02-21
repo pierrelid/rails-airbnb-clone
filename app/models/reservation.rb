@@ -1,11 +1,12 @@
 class Reservation < ApplicationRecord
   belongs_to :user
   belongs_to :experience
-  after_create :send_sms
+  #after_create :send_sms
 
   # validates :participants_number, presence: true
   # validates :start_at, presence: true
   # validates :end_at, presence: true
+
 
   def send_sms
     @user = self.user

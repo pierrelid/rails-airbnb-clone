@@ -9,7 +9,8 @@
 
     <% if user_signed_in? %>
 
-    <%= link_to "My experiences", reservations_path, class: "dropdown-item" %>
+    <%= link_to "My experiences", my_experiences_path, class: "dropdown-item" %>
+    <%= link_to "My reservations", reservations_path, class: "dropdown-item" %>
 
     <div class="dropdown">
       <i class="fas fa-bars" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>

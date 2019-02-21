@@ -1,0 +1,19 @@
+<h1>My list of experiences</h1>
+<% @experiences.each do |experience| %>
+  <h2><%= experience.name %></h2>
+  <p><%= experience.price %></p>
+  <p><%= experience.description %></p>
+<% end %>
+
+<%= link_to 'Create a experience', new_my_experience_path %>
+
+<ul>
+  <% @reservations.each do |reservation| %>
+  <li><%= reservation[0].participants_number %></li>
+  <li><%= reservation[0].total_price %></li>
+  <li><%= reservation[0].pending ? "Pending" : "Accepted" %></li>
+  <li><%= link_to "Approve", approve_reservation_path(reservation[0]), :method => :put, remote: true %></li>
+  <% end %>
+</ul>
+
+
