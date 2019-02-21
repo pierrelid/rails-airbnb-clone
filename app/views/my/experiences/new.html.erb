@@ -1,0 +1,17 @@
+<div class="wrapper-style" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5)), url('https://res.cloudinary.com/drcebzqwz/image/upload/v1550664721/clone%20air%20bnb/experience3.jpg'); background-size: cover; background-position: center;">
+  <div class="container container-style">
+    <div class="form-style">
+      <%= simple_form_for [:my, @experience] do |f| %>
+      <p>Post your experience now! 🙂</p>
+      <%= f.input :name %>
+      <%= f.input :price %>
+      <%= f.input :participants_number_max %>
+      <%= f.input :description %>
+      <%= f.input :address %>
+      <%= f.input :photo %>
+      <%= f.input :photo_cache, as: :hidden %>
+      <%= f.button :submit, url: my_experiences_path, method: :post, class: "btn btn-green"%>
+      <% end %>
+    </div>
+  </div>
+</div>

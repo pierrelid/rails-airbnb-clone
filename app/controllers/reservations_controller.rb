@@ -27,6 +27,13 @@ class ReservationsController < ApplicationController
     @total_price = @experience.price * @experience.participants_number
   end
 
+  def approve
+    @reservation = Reservation.find(params[:id])
+    if @reservation.update(pending: false)
+      #send_sms_accepted
+    else
+  end
+
   private
 
   def reservation_params
@@ -36,7 +43,24 @@ class ReservationsController < ApplicationController
   def set_experience
     @experience = Experience.find(params[:experience_id])
   end
+
+  def send_sms_accepted
+    @user = self.user
+    @user.phone.slice!(0)
+    @user_phone = "+33" + @user.phone
+    @host = User.find(self.user_id)
+    client = Twilio::REST::Client.new(ENV['ACCOUNT_SID'], ENV['AUTH_TOKEN'])
+    from = '+33644645152'
+    to = @user_phone
+    client.messages.create(
+    from: from,
+    to: to,
+    body: "Votre réservation a bien été acceptée !"
+    )
+  end
+
 end
+
 
 
 
