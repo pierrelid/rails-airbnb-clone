@@ -23,6 +23,30 @@
 
 }
 
+.form-Inshow {
+  width:100%;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 2em;
+  p {
+    font-size: 22px;
+    font-weight:bold;
+    color: $gray;
+    padding: 0.5em 0em;
+  }
+  label {
+    color: $gray;
+    font-weight: bold;
+  }
+  a {
+    color: $gray;
+      &:hover {
+    text-decoration: underline;
+    }
+  }
+}
+
 .wrapper-style{
   height: 100%;
   width: 100%;
