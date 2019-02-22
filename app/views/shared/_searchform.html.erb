@@ -1,0 +1,14 @@
+
+  <div class="form-container">
+    <%= image_tag "compass.png" %>
+    <div class="item">
+      <%= simple_form_for :search, url: experiences_path, :method => :get do |f| %>
+        <div class="form-group">
+        <%= f.input_field :query, required: false, label: false, placeholder: 'Search for an activity', class: "form-control" %>
+        <%= f.submit "Search", class: "btn btn-green search-button" %>
+        </div>
+      <% end %>
+    </div>
+    <%= link_to "See all activities" ,experiences_path, class:"btn btn-white search-button-white" %>
+  </div>
+
