@@ -6,18 +6,8 @@
 </div>
 
 <div style="background-color:#1B716A">
-  <div class="form-container">
-    <%= image_tag "compass.png" %>
-    <form class="item">
-     <div class="form-group">
-      <input type="" id="inputPassword6" class="form-control" placeholder="City">
-      <button type="submit" class="btn btn-green search-button">Search</button>
-    </div>
-  </form>
-  <%= link_to "See all activities" ,experiences_path, class:"btn btn-white search-button-white" %>
-  </div>
+    <%= render 'shared/searchform' %>
 </div>
-
 
 <div class="utilities">
   <div class="container">
@@ -46,3 +36,123 @@
     </div>
   </div>
 </div>
+
+<div class="container">
+  <div class="intro">
+    <h1>Check out our most popular</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores beatae debitis laudantium aliquam reiciendis optio ab, est quod praesentium cumque assumenda, perferendis nostrum possimus ullam non dignissimos. Ipsum, dignissimos, illum.</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6" style="text-align: center">
+      <div class="border-right-dotted ">
+      </div>
+      <div class="globe">
+        <%= image_tag 'card.png' %>
+      </div>
+      <div class="experience-content">
+        <h2>Déjà 300 000 voyageurs et 97% de satisfaction</h2>
+        <p>Evaneos c'est une grande communauté de voyageurs passionnés. Découvrez leurs retours d'expériences et leurs avis sur leurs voyages aux quatre coins du monde accompagnés par nos agents locaux.</p>
+      </div>
+
+    </div>
+    <div class="col-sm-6">
+      <div class="container">
+        <h5><strong>Most populars ⭐⭐⭐⭐⭐</strong></h5>
+        <div class="row">
+          <% @experiences.each do |experience| %>
+          <div class="col-sm-6">
+            <%= link_to experience_path(experience.id) do %>
+           <div class="card-trip card-trip-home">
+             <%= cl_image_tag(experience.photo.url) %>
+             <div class="card-trip-infos">
+                 <h2><%= experience.name %></h2>
+               <h2 class="card-trip-pricing"><%= experience.price %>€</h2>
+             </div>
+           </div>
+           <% end %>
+         </div>
+         <% end %>
+       </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="utilities-lg">
+  <div class="container">
+    <h5 style="">Why choose CamelBack ?</h5>
+    <div style="border-bottom: dotted 2px white; width: 30px;margin-bottom: 1.5em"></div>
+    <div class="row">
+      <div class="col-sm-4 utilitie-container">
+        <%= image_tag "logo1.png" %>
+        <div class="utilitie-praragraph">
+          <h6>Discover</h6>
+          <p>1 300 local agencies selected by Evaneos</p>
+        </div>
+      </div>
+      <div class="col-sm-4 utilitie-container">
+        <%= image_tag "logo2.png" %>
+        <div class="utilitie-praragraph">
+          <h6>Discover</h6>
+          <p>1 300 local agencies selected by Evaneos</p>
+        </div>
+      </div>
+      <div class="col-sm-4 utilitie-container">
+        <%= image_tag "logo3.png" %>
+        <div class="utilitie-praragraph">
+          <h6>Discover</h6>
+          <p>1 300 local agencies selected by Evaneos</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="container">
+  <div class="intro">
+    <h1>Our clients love CamelBack</h1>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <% @reservations.each do |reservation| %>
+    <div class="col-sm-4">
+      <div class="card-product">
+        <img src="<%= image_path reservation.experience.photo %>">
+        <div class="card-product-infos">
+          <% if reservation.rating == nil %>
+          <h2><%= reservation.experience.name %></h2>
+          <%= link_to "Donner un avis", new_reservation_review_path(reservation) %>
+          <% else %>
+          <% reservation.rating.to_i.times do %>
+          <span>⭐</span>
+          <% end %>
+          <h2><%= reservation.experience.name %></h2>
+          <span><%= reservation.review %></span>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/drcebzqwz/image/upload/v1550664725/clone%20air%20bnb/experience10.jpg)">
+  <div style="text-align:center">
+    <p>Nouvelles experiences</p>
+    <%= link_to "Voir les autres experences",experiences_path ,class: "btn btn-green btn-green-lg" %>
+  </div>
+</div>
+
+

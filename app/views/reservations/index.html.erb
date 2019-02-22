@@ -16,11 +16,11 @@
           <h2><%= reservation.experience.name %></h2>
           <%= link_to "Donner un avis", new_reservation_review_path(reservation) %>
           <% else %>
-          <span>⭐</span>
-          <h2><%= reservation.experience.name %></h2>
           <% reservation.rating.to_i.times do %>
-          <span><%= reservation.review %></span>
+          <span>⭐</span>
           <% end %>
+          <h2><%= reservation.experience.name %></h2>
+          <span><%= reservation.review %></span>
           <% end %>
         </div>
       </div>

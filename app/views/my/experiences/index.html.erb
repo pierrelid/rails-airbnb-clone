@@ -16,18 +16,20 @@
 <div class="container">
   <div class="row">
     <% @experiences.each do |experience| %>
-      <div class="card-trip">
-        <img src="<%= cl_image_tag(experience.photo.url) %>">
-        <div class="card-trip-infos">
-          <div>
-            <h2><%= experience.name %></h2>
-            <p><i class="fas fa-user-friends"></i> <%= experience.participants_number_max %></p>
-            </div>
-            <h2 class="card-trip-pricing"><%= experience.price %>€</h2>
-            </div>
-          </div>
-    <% end %>
-  </div>
+    <div class="col-sm-4">
+     <div class="card-trip">
+       <%= cl_image_tag(experience.photo.url) %>
+       <div class="card-trip-infos">
+         <div>
+           <h2><%= experience.name %></h2>
+           <p><i class="fas fa-user-friends"></i> <%= experience.participants_number_max %></p>
+         </div>
+         <h2 class="card-trip-pricing"><%= experience.price %>€</h2>
+       </div>
+     </div>
+   </div>
+   <% end %>
+ </div>
 </div>
 
 <div class="container">
@@ -38,13 +40,30 @@
 </div>
 
 
-<ul>
-  <% @reservations.each do |reservation| %>
-  <li><%= reservation.participants_number %></li>
-  <li><%= reservation.total_price %></li>
-  <li><%= reservation.pending ? "Pending" : "Accepted" %></li>
-  <li><%= link_to "Approve", approve_reservation_path(reservation), :method => :put, remote: true %></li>
+
+<div class="container">
+  <div class="row">
+    <% @reservations.each do |reservation| %>
+    <div class="col-sm-4">
+     <div class="card-trip">
+       <div class="card-trip-infos">
+         <div>
+          <h6><%= reservation.user.first_name.capitalize  + " " + reservation.user.last_name.capitalize  %></h6>
+          <% if reservation.pending == true %>
+          <span class='badge badge-warning' >Pending</span>
+          <%= link_to "Approve", approve_reservation_path(reservation), :method => :put, remote: true, class: "btn btn-green" %>
+          <% else %>
+          <span class='badge badge-success' >Accepted</span>
+          <% end  %>
+        </div>
+      </div>
+    </div>
+  </div>
   <% end %>
-</ul>
+</div>
+</div>
+
+
+
 
 
