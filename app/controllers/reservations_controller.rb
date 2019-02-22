@@ -30,8 +30,9 @@ class ReservationsController < ApplicationController
   def approve
     @reservation = Reservation.find(params[:id])
     if @reservation.update(pending: false)
-      #send_sms_accepted
+       #send_sms_accepted
     else
+    end
   end
 
   private
