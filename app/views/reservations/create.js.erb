@@ -1,0 +1,16 @@
+function refreshForm(innerHTML) {
+  const newReviewForm = document.getElementById('new_review');
+  newReviewForm.innerHTML = innerHTML;
+}
+
+function addReview(reviewHTML) {
+  const reservation = document.getElementById('reservation');
+  reservation.insertAdjacentHTML('beforeend', reviewHTML);
+}
+
+<% if @review.errors.any? %>
+  refreshForm('<%= j render "reservation/form", experience: @experience, review: @review %>');
+<% else %>
+  addReview('<%= j render "reservation/show", reservation: @reservation %>');
+  refreshForm('<%= j render "reservation/form", experience: @experience, review: Review.new %>');
+<% end %>
