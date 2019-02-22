@@ -95,9 +95,47 @@
   }
 }
 
+.utilities-lg{
+  background-color:$dark-green;
+  color: white;
+  padding:60px 0px;
+  margin-top: 1em;
+  img{
+  height:80px;
+  }
+  p {
+    font-size:12px;
+  }
+  .utilitie-praragraph{
+    padding: 0em 1em;
+  }
+  .utilitie-container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
 .intro{
   padding: 2em;
   margin: 2em 0em;
   border-left: dotted 2px $gray;
 }
 
+.border-right-dotted {
+  height:80px;
+  max-width: calc(50% + 2px);
+  border-right: dotted $gray 2px;
+}
+
+.experience-content{
+  padding: 5em 1em;
+  h2{
+    font-size: 24px;
+    font-weight: bold;
+    color: $gray;
+  }
+  p {
+    color: $medium-gray;
+  }
+}
