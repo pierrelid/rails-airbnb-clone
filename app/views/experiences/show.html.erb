@@ -21,6 +21,7 @@
           <li>Nombre max de participants : <strong><%= @experience.participants_number_max %></strong></li>
           <li>Prix : <strong><%= @experience.price %> €</strong></li>
         </ul>
+        <%= render 'reservations/form', experience: @experience, reservation: @reservation %>
       </div>
     </div>
   </div>
