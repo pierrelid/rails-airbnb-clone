@@ -1,5 +1,7 @@
 <div class="form-Inshow">
-  <%= simple_form_for ([experience, reservation], remote: true) do |f| %>
+
+  <%= simple_form_for ([experience, reservation], remote: true) do |f|
+
   <p>Book your experience !</p>
   <%= f.input :participants_number  %>
   <%= f.input :start_at, as: :string, required: false, input_html: {id: "start_at"}, class: "datepicker" %>

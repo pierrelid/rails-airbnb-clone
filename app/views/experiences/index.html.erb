@@ -16,21 +16,19 @@
     <div class="card-container col-md-8">
       <% @experiences.each do |experience| %>
         <%= link_to experience_path(experience.id) do %>
-        <div class="card-trip">
-          <img src="<%= image_path experience.photo %>">
-          <div class="card-trip-infos">
+          <div class="card-trip">
+            <%= cl_image_tag(experience.photo.url) %>
             <div>
               <h2><%= experience.name %></h2>
               <p><i class="fas fa-user-friends"></i> <%= experience.participants_number_max %></p>
-              </div>
-              <h2 class="card-trip-pricing"><%= experience.price %>€</h2>
-              </div>
             </div>
+            <h2 class="card-trip-pricing"><%= experience.price %>€</h2>
+          </div>
         <% end %>
       <% end %>
     </div>
 
-      <div
+    <div
       class="col-md-4"
       id="map"
       style="width: 95%;
