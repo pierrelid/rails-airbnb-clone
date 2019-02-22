@@ -4,10 +4,7 @@ class My::ExperiencesController < ApplicationController
 
     def index
       @experiences = current_user.experiences
-      @reservations = []
-      @experiences.each do |exeprience|
-        @reservations << Reservation.where(experience_id: exeprience.id)
-      end
+      @reservations = current_user.reservations_on_my_experiences
     end
 
     def new
