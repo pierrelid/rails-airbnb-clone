@@ -60,7 +60,7 @@ end
     name: ["Sports", "OutDoors", "Activity"].sample,
     price: [10,25,30,5,3,60].sample,
     participants_number_max: [1,2,3,4,5,6,7,8,9,10].sample,
-    photo: ["https://res.cloudinary.com/drcebzqwz/image/upload/v1550664730/clone%20air%20bnb/experience7.jpg",
+    remote_photo_url: ["https://res.cloudinary.com/drcebzqwz/image/upload/v1550664730/clone%20air%20bnb/experience7.jpg",
       "https://res.cloudinary.com/drcebzqwz/image/upload/v1550664729/clone%20air%20bnb/experience4.jpg",
       "https://res.cloudinary.com/drcebzqwz/image/upload/v1550664728/clone%20air%20bnb/experience8.jpg",
       "https://res.cloudinary.com/drcebzqwz/image/upload/v1550664725/clone%20air%20bnb/experience10.jpg",

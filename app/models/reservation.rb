@@ -10,7 +10,6 @@ class Reservation < ApplicationRecord
   def send_sms
     @user = self.user
     @user.phone.slice!(0)
-    byebug
     @user_phone = "+33" + @user.phone
     @host = User.find(self.user_id)
     client = Twilio::REST::Client.new(ENV['ACCOUNT_SID'], ENV['AUTH_TOKEN'])

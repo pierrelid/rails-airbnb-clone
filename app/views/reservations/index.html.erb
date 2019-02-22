@@ -12,8 +12,16 @@
       <div class="card-product">
         <img src="<%= image_path reservation.experience.photo %>">
         <div class="card-product-infos">
+          <% if reservation.rating == nil %>
           <h2><%= reservation.experience.name %></h2>
           <%= link_to "Donner un avis", new_reservation_review_path(reservation) %>
+          <% else %>
+          <span>⭐</span>
+          <h2><%= reservation.experience.name %></h2>
+          <% reservation.rating.to_i.times do %>
+          <span><%= reservation.review %></span>
+          <% end %>
+          <% end %>
         </div>
       </div>
     </div>
