@@ -50,12 +50,24 @@ a:hover {
   p{
   color:$gray;
   }
+  h6{
+    color:$gray;
+    font-weight: bold;
+    font-size:16px;
+  }
 }
 
 .card-trip > img {
   height: 200px;
   width: 100%;
   object-fit: cover;
+}
+
+.card-trip-home{
+  height: 170px;
+  img{
+    height: 120px;
+  }
 }
 
 .card-trip h2 {
@@ -100,7 +112,6 @@ a:hover {
   border: 1px solid rgb(235,235,235);
   img{
     width:50px;
-    border-radius: 50%;
   }
 }
 
@@ -149,6 +160,6 @@ a:hover {
   font-size: 24px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 0px;
+  margin:0px;
 }

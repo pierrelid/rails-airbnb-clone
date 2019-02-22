@@ -3,5 +3,7 @@ class PagesController < ApplicationController
   def home
     @experience = Experience.new
     @categories = Categorie.all
+    @experiences = Experience.last(6)
+    @reservations = Reservation.where(rating: 5)
   end
 end

@@ -30,8 +30,8 @@ class ReservationsController < ApplicationController
   def approve
     @reservation = Reservation.find(params[:id])
     if @reservation.update(pending: false)
-       #send_sms_accepted
-    else
+       @user = User.find(@reservation.user_id)
+       send_sms_accepted(@user)
     end
   end
 
@@ -45,11 +45,8 @@ class ReservationsController < ApplicationController
     @experience = Experience.find(params[:experience_id])
   end
 
-  def send_sms_accepted
-    @user = self.user
-    @user.phone.slice!(0)
-    @user_phone = "+33" + @user.phone
-    @host = User.find(self.user_id)
+  def send_sms_accepted(user)
+    @user_phone = "+33685694571"
     client = Twilio::REST::Client.new(ENV['ACCOUNT_SID'], ENV['AUTH_TOKEN'])
     from = '+33644645152'
     to = @user_phone
