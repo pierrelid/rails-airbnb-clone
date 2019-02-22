@@ -19,11 +19,11 @@
         <%= link_to experience_path(experience.id) do %>
           <div class="card-trip">
             <%= cl_image_tag(experience.photo.url) %>
-            <div>
+            <div class="card-content">
               <h2><%= experience.name %></h2>
               <p><i class="fas fa-user-friends"></i> <%= experience.participants_number_max %></p>
+              <h2 class="card-trip-pricing"><%= experience.price %>€</h2>
             </div>
-            <h2 class="card-trip-pricing"><%= experience.price %>€</h2>
           </div>
         <% end %>
       <% end %>

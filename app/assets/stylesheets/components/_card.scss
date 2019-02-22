@@ -163,3 +163,16 @@ a:hover {
   border-radius: 0px;
   margin:0px;
 }
+
+.card-content {
+  padding: 10px 5px;
+  display: flex;
+  position: relative;
+  h2:last-child {
+  position: absolute;
+  right: 10px;
+  }
+  p {
+    margin-left :15px;
+  }
+}
