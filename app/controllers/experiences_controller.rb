@@ -1,13 +1,11 @@
 class ExperiencesController < ApplicationController
-  skip_before_action :authenticate_user!, only: :index
+  skip_before_action :authenticate_user!, only: [:index, :show]
   def index
-   #  if params[:query].present?
-   #   @experiences = Experience.where(title: params[:query])
-   # else
-   #   @experiences = Experience.all
-   # end
-    @experiences = Experience.where.not(latitude: nil, longitude: nil)
-
+    if params[:search].present?
+      @experiences = Experience.where(name: params[:search][:query])
+    else
+      @experiences = Experience.where.not(latitude: nil, longitude: nil)
+    end
     @markers = @experiences.map do |experience|
       {
         lng: experience.longitude,
@@ -22,4 +20,3 @@ class ExperiencesController < ApplicationController
     @reservations = Reservation.where(experience_id: @experience.id)
   end
 end
-

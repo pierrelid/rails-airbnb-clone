@@ -6,18 +6,8 @@
 </div>
 
 <div style="background-color:#1B716A">
-  <div class="form-container">
-    <%= image_tag "compass.png" %>
-    <form class="item">
-     <div class="form-group">
-      <input type="" id="inputPassword6" class="form-control" placeholder="City">
-      <button type="submit" class="btn btn-green search-button">Search</button>
-    </div>
-  </form>
-  <%= link_to "See all activities" ,experiences_path, class:"btn btn-white search-button-white" %>
-  </div>
+    <%= render 'shared/searchform' %>
 </div>
-
 
 <div class="utilities">
   <div class="container">
