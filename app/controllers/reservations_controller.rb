@@ -17,9 +17,15 @@ class ReservationsController < ApplicationController
     @reservation = @experience.reservations.new(reservation_params)
     @reservation.user = current_user
     if @reservation.save
-      redirect_to reservations_path
+      respond_to do |format|
+        format.html { redirect_to reservations_path }
+        format.js
+      end
     else
-      render :new
+      respond_to do |format|
+        format.hmtl { render :new }
+        format.js
+      end
     end
   end
 
